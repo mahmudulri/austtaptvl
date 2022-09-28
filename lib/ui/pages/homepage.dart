@@ -19,7 +19,7 @@ class Homepage extends StatelessWidget {
           children: [
             SvgPicture.asset(
               "assets/images/screen.svg",
-              fit: BoxFit.fill,
+              fit: BoxFit.cover,
             ),
             Column(
               children: [
