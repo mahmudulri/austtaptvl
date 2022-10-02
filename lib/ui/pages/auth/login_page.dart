@@ -1,11 +1,13 @@
+import 'package:austtaptvl/ui/pages/auth/register_page.dart';
 import 'package:austtaptvl/ui/widgets/custom_textfield.dart';
 import 'package:austtaptvl/ui/widgets/loginbutton.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
-class Homepage extends StatelessWidget {
-  const Homepage({Key? key}) : super(key: key);
+class LoginPage extends StatelessWidget {
+  const LoginPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -115,7 +117,7 @@ class Homepage extends StatelessWidget {
                     ),
                     InkWell(
                         onTap: () {
-                          print("Clicked forgot pass");
+                          Get.to(RegisterPage());
                         },
                         child: Text(
                           " REGISTER",
