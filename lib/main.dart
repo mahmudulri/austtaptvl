@@ -1,6 +1,7 @@
 import 'package:austtaptvl/ui/pages/auth/login_page.dart';
 import 'package:austtaptvl/ui/pages/auth/register_fields_box/pageone.dart';
 import 'package:austtaptvl/ui/pages/auth/register_page.dart';
+import 'package:austtaptvl/ui/pages/details_pages/upcoming_details.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -20,6 +21,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: RegisterPage());
+        home: UpcomingDetails());
   }
 }
