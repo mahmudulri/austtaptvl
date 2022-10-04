@@ -73,8 +73,9 @@ class UpcomingDetails extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          Icon(
-                            Icons.airplane_ticket_sharp,
+                          Image.asset(
+                            "assets/images/icons/ticket.png",
+                            height: 20,
                           ),
                           SizedBox(
                             width: 5,
