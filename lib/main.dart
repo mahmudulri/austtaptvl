@@ -6,6 +6,8 @@ import 'package:austtaptvl/ui/pages/details_pages/job_details.dart';
 import 'package:austtaptvl/ui/pages/details_pages/news_details.dart';
 import 'package:austtaptvl/ui/pages/details_pages/notice_details.dart';
 import 'package:austtaptvl/ui/pages/details_pages/upcoming_details.dart';
+import 'package:austtaptvl/ui/pages/message/message_box.dart';
+import 'package:austtaptvl/ui/pages/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -25,6 +27,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: JobDetails());
+        home: Splash_Screen());
   }
 }

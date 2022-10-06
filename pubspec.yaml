@@ -38,6 +38,8 @@ dependencies:
   get: ^4.6.5
   google_fonts: ^3.0.1
   toggle_switch: ^2.0.1
+  lottie: ^1.4.1
+  outlined_text: ^1.0.1
 
 dev_dependencies:
   flutter_test:
@@ -69,6 +71,7 @@ flutter:
   - assets/images/icons/ticket.png
   - assets/images/newsdetails.png
   - assets/images/noticedetails.png
+  - assets/files/splash.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
