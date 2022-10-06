@@ -1,6 +1,7 @@
 import 'package:austtaptvl/ui/pages/auth/login_page.dart';
 import 'package:austtaptvl/ui/pages/auth/register_fields_box/pageone.dart';
 import 'package:austtaptvl/ui/pages/auth/register_page.dart';
+import 'package:austtaptvl/ui/pages/create_post_page.dart';
 import 'package:austtaptvl/ui/pages/details_pages/job_details.dart';
 import 'package:austtaptvl/ui/pages/details_pages/news_details.dart';
 import 'package:austtaptvl/ui/pages/details_pages/notice_details.dart';
