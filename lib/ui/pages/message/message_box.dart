@@ -58,7 +58,7 @@ class MessageBox extends StatelessWidget {
                   indicator: UnderlineTabIndicator(
                     borderSide: BorderSide(
                       width: 4,
-                      color: Color(0xFF646464),
+                      color: Color(0xFF0FA958),
                     ),
                     insets: EdgeInsets.symmetric(horizontal: 0),
                   ),
@@ -88,7 +88,7 @@ class MessageBox extends StatelessWidget {
                     child: ListView.separated(
                       separatorBuilder: (context, index) {
                         return SizedBox(
-                          height: 10,
+                          height: screenHeigth * 0.010,
                         );
                       },
                       itemCount: 4,
@@ -109,8 +109,8 @@ class MessageBox extends StatelessWidget {
                                         shape: BoxShape.circle,
                                         color: Color(0xffB7E5CD),
                                       ),
-                                      height: 60,
-                                      width: 60,
+                                      height: screenHeigth * 0.150,
+                                      width: screenWidth * 0.150,
                                       child: Icon(Icons.chat),
                                     ),
                                   ],
@@ -133,7 +133,7 @@ class MessageBox extends StatelessWidget {
                                               overflow: TextOverflow.ellipsis,
                                               softWrap: true,
                                               style: TextStyle(
-                                                fontSize: 15,
+                                                fontSize: screenHeigth * 0.020,
                                                 color: Colors.black,
                                               ),
                                             ),
@@ -141,6 +141,7 @@ class MessageBox extends StatelessWidget {
                                           Text(
                                             "13 sep 2022, 10.05 am",
                                             style: TextStyle(
+                                              fontSize: screenHeigth * 0.015,
                                               color: Color(0xff777777),
                                             ),
                                           )
@@ -154,7 +155,7 @@ class MessageBox extends StatelessWidget {
                                               overflow: TextOverflow.ellipsis,
                                               softWrap: true,
                                               style: TextStyle(
-                                                fontSize: 13,
+                                                fontSize: screenHeigth * 0.018,
                                                 color: Color(0xff4F4F4F),
                                               ),
                                             ),
@@ -177,7 +178,7 @@ class MessageBox extends StatelessWidget {
                                               // overflow: TextOverflow.ellipsis,
                                               // softWrap: true,
                                               style: TextStyle(
-                                                fontSize: 13,
+                                                fontSize: screenHeigth * 0.015,
                                                 color: Color(0xff828282),
                                               ),
                                             ),
