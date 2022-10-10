@@ -1,3 +1,4 @@
+import 'package:austtaptvl/draft.dart';
 import 'package:austtaptvl/ui/pages/auth/login_page.dart';
 import 'package:austtaptvl/ui/pages/auth/register_fields_box/pageone.dart';
 import 'package:austtaptvl/ui/pages/auth/register_page.dart';
@@ -27,6 +28,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: Splash_Screen());
+        home: MessageBox());
   }
 }

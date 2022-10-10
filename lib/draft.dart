@@ -1,93 +1,98 @@
 import 'package:flutter/material.dart';
 // import 'Chat.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+class DraftPage extends StatefulWidget {
+  const DraftPage({Key? key}) : super(key: key);
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _DraftPageState createState() => _DraftPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _DraftPageState extends State<DraftPage> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 4,
+      length: 3,
       child: Scaffold(
           appBar: AppBar(
-            title: Text("Flutter TabBar Example - Customized "),
+            leading: Icon(
+              Icons.arrow_back,
+              color: Colors.black,
+            ),
+            elevation: 0.0,
+            centerTitle: true,
+            backgroundColor: Colors.white,
+            title: Text(
+              "Messages ",
+              style: TextStyle(
+                color: Color(0xff0FA958),
+              ),
+            ),
           ),
-          body: Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Column(
-              children: [
-                Container(
-                  height: 45,
-                  decoration: BoxDecoration(
-                      color: Colors.grey[300],
-                      borderRadius: BorderRadius.circular(25.0)),
+          body: Column(
+            children: [
+              Container(
+                height: 60,
+                decoration: BoxDecoration(
+                  color: Color(0xffE5E5E5),
+                  // borderRadius: BorderRadius.circular(25.0),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(15.0),
                   child: TabBar(
-                    indicator: BoxDecoration(
-                        color: Colors.green[300],
-                        borderRadius: BorderRadius.circular(25.0)),
-                    labelColor: Colors.white,
-                    unselectedLabelColor: Colors.black,
-                    tabs: const [
+                    indicator: UnderlineTabIndicator(
+                        borderSide: BorderSide(width: 4.0),
+                        insets: EdgeInsets.symmetric(horizontal: 20)),
+
+                    indicatorColor: Color(0xff0FA958),
+                    // indicator: BoxDecoration(
+                    //   color: Colors.green[300],
+                    //   // borderRadius: BorderRadius.circular(25.0),
+                    // ),
+                    labelColor: Colors.black,
+                    unselectedLabelColor: Color(0xff4F4F4F),
+                    tabs: [
                       Tab(
-                        text: 'Chats',
+                        text: 'Inbox',
                       ),
                       Tab(
-                        text: 'Status',
+                        text: 'Sent items',
                       ),
                       Tab(
-                        text: 'Calls',
+                        text: 'Important',
                       ),
-                      Tab(
-                        text: 'Settings',
-                      )
                     ],
                   ),
                 ),
-                const Expanded(
-                    child: TabBarView(
+              ),
+              Expanded(
+                child: TabBarView(
                   children: [
                     Center(
-                      child: Text("Chats Pages"),
+                      child: ListView.builder(
+                        itemCount: 20,
+                        itemBuilder: (_, index) {
+                          return Card(
+                            child: Container(
+                              height: 60,
+                              width: double.infinity,
+                              color: Colors.green,
+                              child: Text("Rezaul Karim"),
+                            ),
+                          );
+                        },
+                      ),
                     ),
                     Center(
-                      child: Text("Status Pages"),
+                      child: Text("Sent items"),
                     ),
                     Center(
-                      child: Text('Calls Page'),
+                      child: Text('Important'),
                     ),
-                    Center(
-                      child: Text('Settings Page'),
-                    )
                   ],
-                ))
-              ],
-            ),
+                ),
+              )
+            ],
           )),
     );
   }
