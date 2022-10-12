@@ -8,6 +8,7 @@ import 'package:austtaptvl/ui/pages/details_pages/news_details.dart';
 import 'package:austtaptvl/ui/pages/details_pages/notice_details.dart';
 import 'package:austtaptvl/ui/pages/details_pages/upcoming_details.dart';
 import 'package:austtaptvl/ui/pages/message/message_box.dart';
+import 'package:austtaptvl/ui/pages/message/message_details.dart';
 import 'package:austtaptvl/ui/pages/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -17,7 +18,10 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({Key? key})
+      : super(
+          key: key,
+        );
 
   // This widget is the root of your application.
   @override
@@ -28,6 +32,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: MessageBox());
+        home: DraftPage());
   }
 }

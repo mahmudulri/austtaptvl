@@ -1,25 +1,23 @@
 import 'package:austtaptvl/const/colors.dart';
-import 'package:austtaptvl/const/strings.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
-import 'message_details.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-class MessageBox extends StatelessWidget {
-  var personName = "Rezaul Karim";
-  var type = "Donatiion";
-  var datetime = "13 sep 2022, 10.05 am";
-  var smsdetails =
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec semper justo in sem fermentum malesuada. consectetur adipiscing elit. Donec semper justo in sem fermentum malesuada. Phasellus sed turpis sit amet ipsum imperdiet fringilla.";
-
-  MessageBox({Key? key}) : super(key: key);
+class MessageDetails extends StatelessWidget {
+  String? personName;
+  String? type;
+  String? datetime;
+  String? smsdetails;
+  MessageDetails(
+      {Key? key, this.personName, this.type, this.datetime, this.smsdetails})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     var screenWidth = MediaQuery.of(context).size.width;
     var screenHeigth = MediaQuery.of(context).size.height;
     return DefaultTabController(
-      length: 3,
+      length: 2,
       child: Scaffold(
         floatingActionButton: FloatingActionButton(
           backgroundColor: Color(0xff0FA958),
@@ -29,21 +27,24 @@ class MessageBox extends StatelessWidget {
               "assets/icons/writeicon.png",
             ),
           ),
-          onPressed: () {
-            Get.to(MessageDetails());
-          },
+          onPressed: () {},
         ),
         backgroundColor: Color(0xffE5E5E5),
         appBar: AppBar(
-          leading: Icon(
-            Icons.arrow_back,
-            color: Colors.black,
+          leading: InkWell(
+            onTap: () {
+              Get.back();
+            },
+            child: Icon(
+              Icons.arrow_back,
+              color: Colors.black,
+            ),
           ),
           backgroundColor: Colors.white,
           elevation: 0.0,
           centerTitle: true,
           title: Text(
-            'Messages',
+            'Messages Details',
             style: GoogleFonts.poppins(
               textStyle: TextStyle(
                 color: Color(0xff0FA958),
@@ -85,39 +86,8 @@ class MessageBox extends StatelessWidget {
                   isScrollable: true,
                   labelColor: Colors.black,
                   tabs: [
-                    Text(
-                      "Inbox",
-                      style: GoogleFonts.poppins(
-                        textStyle: TextStyle(
-                          color: Color(0xff333333),
-                        ),
-                      ),
-                    ),
-                    Text(
-                      "Sent items",
-                      style: GoogleFonts.poppins(
-                        textStyle: TextStyle(
-                          color: Color(0xff333333),
-                        ),
-                      ),
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Importants",
-                          style: GoogleFonts.poppins(
-                            textStyle: TextStyle(
-                              color: Color(0xff333333),
-                            ),
-                          ),
-                        ),
-                        Icon(
-                          Icons.star_border,
-                          size: 20,
-                        ),
-                      ],
-                    ),
+                    Text("Inbox"),
+                    Text("Sent items"),
                   ],
                 ),
               ),
@@ -152,19 +122,6 @@ class MessageBox extends StatelessWidget {
                               padding: const EdgeInsets.all(8.0),
                               child: Row(
                                 children: <Widget>[
-                                  Column(
-                                    children: [
-                                      Container(
-                                        decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          color: Color(0xffB7E5CD),
-                                        ),
-                                        height: screenHeigth * 0.150,
-                                        width: screenWidth * 0.150,
-                                        child: Icon(Icons.chat),
-                                      ),
-                                    ],
-                                  ),
                                   SizedBox(
                                     width: screenWidth * 0.040,
                                   ),
@@ -177,32 +134,48 @@ class MessageBox extends StatelessWidget {
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
                                           children: <Widget>[
-                                            Flexible(
-                                              child: Text(
-                                                personName,
-                                                overflow: TextOverflow.ellipsis,
-                                                softWrap: true,
-                                                style: TextStyle(
-                                                  fontSize:
-                                                      screenHeigth * 0.020,
-                                                  color: Colors.black,
+                                            Column(
+                                              children: [
+                                                Text(
+                                                  "From : ${personName!}",
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
+                                                  softWrap: true,
+                                                  style: TextStyle(
+                                                    fontSize:
+                                                        screenHeigth * 0.020,
+                                                    color: Colors.black,
+                                                  ),
                                                 ),
-                                              ),
+                                              ],
                                             ),
-                                            Text(
-                                              datetime,
-                                              style: TextStyle(
-                                                fontSize: screenHeigth * 0.015,
-                                                color: Color(0xff777777),
-                                              ),
-                                            )
+                                            Row(
+                                              children: [
+                                                Icon(
+                                                  Icons.star_border,
+                                                ),
+                                                SizedBox(
+                                                  width: screenWidth * 0.050,
+                                                ),
+                                                Text(
+                                                  datetime!,
+                                                  style: TextStyle(
+                                                    fontSize:
+                                                        screenHeigth * 0.015,
+                                                    color: Color(0xff777777),
+                                                  ),
+                                                )
+                                              ],
+                                            ),
                                           ],
                                         ),
+                                        SizedBox(height: screenHeigth * 0.010),
+                                        // Type text..................................Typeeeee text
                                         Row(
                                           children: <Widget>[
                                             Flexible(
                                               child: Text(
-                                                type,
+                                                type!,
                                                 overflow: TextOverflow.ellipsis,
                                                 softWrap: true,
                                                 style: TextStyle(
@@ -214,7 +187,7 @@ class MessageBox extends StatelessWidget {
                                             ),
                                           ],
                                         ),
-                                        SizedBox(height: 5),
+                                        SizedBox(height: screenHeigth * 0.020),
 
                                         // ),
                                         Row(
@@ -224,8 +197,9 @@ class MessageBox extends StatelessWidget {
                                               CrossAxisAlignment.start,
                                           children: <Widget>[
                                             Flexible(
+                                              // big text..................................big text
                                               child: Text(
-                                                jobcontext,
+                                                smsdetails!,
                                                 maxLines: 5,
                                                 // overflow: TextOverflow.ellipsis,
                                                 // softWrap: true,
@@ -236,11 +210,44 @@ class MessageBox extends StatelessWidget {
                                                 ),
                                               ),
                                             ),
-                                            Icon(
-                                              Icons.star_border,
+                                            // Icon(
+                                            //   Icons.star_border,
+                                            // ),
+                                          ],
+                                        ),
+                                        SizedBox(
+                                          height: screenHeigth * 0.030,
+                                        ),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Container(
+                                              height: 50,
+                                              width: screenWidth * 0.400,
+                                              decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(15)),
+                                                  border: Border.all(
+                                                    width: 2,
+                                                    color: Colors.black,
+                                                  )),
+                                              child: Center(
+                                                child: Text(
+                                                  "DONATE NOW",
+                                                ),
+                                              ),
                                             ),
                                           ],
-                                        )
+                                        ),
+                                        Text(
+                                          "Attachment",
+                                          style: TextStyle(
+                                            color: Color(0xff333333),
+                                            fontSize: 12,
+                                          ),
+                                        ),
                                       ],
                                     ),
                                   )
@@ -254,9 +261,6 @@ class MessageBox extends StatelessWidget {
                   ),
                   Center(
                     child: Text("Sent items"),
-                  ),
-                  Center(
-                    child: Text('Important'),
                   ),
                 ],
               ),
