@@ -6,7 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 class MessageDetails extends StatelessWidget {
   String? personName;
   String? type;
-  String? datetime;
+  String? datetime = "";
   String? smsdetails;
   MessageDetails(
       {Key? key, this.personName, this.type, this.datetime, this.smsdetails})
@@ -137,7 +137,7 @@ class MessageDetails extends StatelessWidget {
                                             Column(
                                               children: [
                                                 Text(
-                                                  "From : ${personName!}",
+                                                  "From : ${personName}",
                                                   overflow:
                                                       TextOverflow.ellipsis,
                                                   softWrap: true,
